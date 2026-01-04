@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Government Scheme Finder - India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #f7931e, transparent),
+                radial-gradient(2px 2px at 40px 70px, #ff6b35, transparent),
+                radial-gradient(1px 1px at 90px 40px, #667eea, transparent),
+                radial-gradient(1px 1px at 130px 80px, #764ba2, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: floatParticles 25s linear infinite;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes floatParticles {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        nav {
+            background: rgba(13, 71, 161, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            margin: 0 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #ffd700;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+            background: linear-gradient(45deg, #ffd700, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        select, input[type="checkbox"] + label {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        select:focus, input[type="checkbox"]:checked + label {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            background: rgba(255,215,0,0.1);
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255,107,53,0.4);
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .success { 
+            background: linear-gradient(45deg, #56ab2f, #a8e6cf);
+            color: white;
+            border-color: #56ab2f;
+            animation: pulse 2s infinite;
+        }
+
+        .error { 
+            background: linear-gradient(45deg, #ff4757, #ff6b7a);
+            color: white;
+            border-color: #ff4757;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a { margin: 0 15px; font-size: 1rem; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            .card { margin: 20px; padding: 30px 20px; }
+            .section { padding: 40px 10px; }
+        }
+
+        /* Scroll Progress */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #ffd700);
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <nav>
+        <a href="#home">🏠 Home</a>
+        <a href="#life">🎯 Life Event</a>
+        <a href="#eligibility">❓ Eligibility</a>
+        <a href="#documents">📄 Documents</a>
+        <a href="#voice">🎙 Voice</a>
+    </nav>
+
+    <!-- HOME -->
+    <div class="section" id="home">
+        <div class="card">
+            <h1>🤖 AI Government Scheme Finder</h1>
+            <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.3rem; line-height: 1.6;">
+                Discover government schemes instantly based on your life events, eligibility, documents & voice commands
+            </p>
+        </div>
+    </div>
+
+    <!-- LIFE EVENT -->
+    <div class="section" id="life">
+        <div class="card">
+            <h2>🎯 Life Event Based Discovery</h2>
+            <div class="form-group">
+                <select id="lifeEvent">
+                    <option value="">Select your life event</option>
+                    <option value="student">🎓 Student / Education</option>
+                    <option value="farmer">🌾 Farmer / Agriculture</option>
+                    <option value="unemployed">💼 Unemployed / Job Seeker</option>
+                </select>
+            </div>
+            <button onclick="findScheme()">🔍 Find My Schemes</button>
+            <div class="result" id="lifeResult"></div>
+        </div>
+    </div>
+
+    <!-- ELIGIBILITY -->
+    <div class="section" id="eligibility">
+        <div class="card">
+            <h2>❓ Eligibility Checker</h2>
+            <div class="form-group">
+                <select id="eligibilityCheck">
+                    <option value="">Why was I rejected?</option>
+                    <option value="income">💰 High Income</option>
+                    <option value="age">📅 Age Criteria</option>
+                    <option value="documents">📋 Missing Documents</option>
+                </select>
+            </div>
+            <button onclick="checkEligibility()">💡 Explain Reason</button>
+            <div class="result" id="eligibilityResult"></div>
+        </div>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="section" id="documents">
+        <div class="card">
+            <h2>📄 Document Readiness</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="aadhaar" style="margin-right: 10px; width: 20px; height: 20px;">
+                    <span>🆔 Aadhaar Card</span>
+                </label>
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="incomeCert" style="margin-right: 10px; width: 20px; height: 20px;">
+                    <span>💰 Income Certificate</span>
+                </label>
+            </div>
+            <button onclick="checkDocuments()">✅ Check Readiness</button>
+            <div class="result" id="docResult"></div>
+        </div>
+    </div>
+
+    <!-- VOICE -->
+    <div class="section" id="voice">
+        <div class="card">
+            <h2>🎙️ Voice Search</h2>
+            <button onclick="startVoice()" id="voiceBtn">🗣️ Start Speaking</button>
+            <div class="result" id="voiceText" style="font-size: 1.5rem;"></div>
+        </div>
+    </div>
+
+    <script>
+        // All original functionality preserved + enhancements
+        function findScheme() {
+            let event = document.getElementById("lifeEvent").value;
+            let result = document.getElementById("lifeResult");
+            if (event === "student")
+                result.innerHTML = "✅ <strong>Post Matric Scholarship</strong><br>₹12,000 - ₹20,000 annually";
+            else if (event === "farmer")
+                result.innerHTML = "✅ <strong>PM-KISAN Scheme</strong><br>₹6,000 yearly direct transfer";
+            else if (event === "unemployed")
+                result.innerHTML = "✅ <strong>Skill India / PMKVY</strong><br>Free skill training + stipend";
+            else
+                result.innerHTML = "❌ Please select a life event first";
+            result.className = "result " + (event ? "success" : "error");
+        }
+
+        function checkEligibility() {
+            let reason = document.getElementById("eligibilityCheck").value;
+            let result = document.getElementById("eligibilityResult");
+            if (reason === "income")
+                result.innerHTML = "❌ Income exceeds ₹2.5 Lakh annual limit";
+            else if (reason === "age")
+                result.innerHTML = "❌ Must be 18-35 years for this scheme";
+            else if (reason === "documents")
+                result.innerHTML = "❌ Aadhaar + Income proof required";
+            else
+                result.innerHTML = "❌ Select rejection reason";
+            result.className = "result error";
+        }
+
+        function checkDocuments() {
+            let a = document.getElementById("aadhaar").checked;
+            let i = document.getElementById("incomeCert").checked;
+            let result = document.getElementById("docResult");
+            if (a && i)
+                result.innerHTML = "✅ All documents ready! You can apply now";
+            else
+                result.innerHTML = "❌ Complete all checkboxes above";
+            result.className = "result " + (a && i ? "success" : "error");
+        }
+
+        function startVoice() {
+            const btn = document.getElementById("voiceBtn");
+            btn.textContent = "🎤 Listening...";
+            btn.style.background = "linear-gradient(45deg, #667eea, #764ba2)";
+            
+            let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = "en-IN";
+            recognition.onresult = function(event) {
+                let transcript = event.results[0][0].transcript.toLowerCase();
+                document.getElementById("voiceText").innerHTML = `🎙️ You said: "${transcript}"`;
+                btn.textContent = "🗣️ Start Speaking";
+                btn.style.background = "";
+            };
+            recognition.onerror = function() {
+                document.getElementById("voiceText").innerHTML = "❌ Voice recognition failed";
+                btn.textContent = "🗣️ Try Again";
+                btn.style.background = "";
+            };
+            recognition.start();
+        }
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const progress = document.getElementById('progressBar');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progress.style.width = scrolled + '%';
+        });
+
+</script>
+</body>
+</html>
